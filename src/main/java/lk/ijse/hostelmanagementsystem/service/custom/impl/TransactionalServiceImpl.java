@@ -12,6 +12,8 @@ import lk.ijse.hostelmanagementsystem.repo.custom.impl.StudentRoomRepoImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.TransactionalService;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -21,8 +23,8 @@ public class TransactionalServiceImpl implements TransactionalService {
     private final RoomRepo roomRepo ;
     public TransactionalServiceImpl(){
         converter=Converter.getInstance();
-        studentRoomRepo=new StudentRoomRepoImpl();
-        roomRepo=new RoomRepoImpl();
+        studentRoomRepo= RepoFactory.getInstance().getRepo(RepoTypes.STUDENT_ROOM);;
+        roomRepo=RepoFactory.getInstance().getRepo(RepoTypes.ROOM);;
     }
     @Override
     public boolean reserveRoom(StudentRoomDTO studentRoomDTO) {

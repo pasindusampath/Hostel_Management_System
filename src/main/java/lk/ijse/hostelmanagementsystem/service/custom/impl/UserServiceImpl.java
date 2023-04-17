@@ -7,13 +7,15 @@ import lk.ijse.hostelmanagementsystem.repo.custom.impl.UserRepoImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.UserService;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-    private UserRepo repo = new UserRepoImpl();
+    private UserRepo repo = RepoFactory.getInstance().getRepo(RepoTypes.USER);;
     private Converter converter = Converter.getInstance();
     private FactoryConfiguration factory = FactoryConfiguration.getInstance();
     @Override

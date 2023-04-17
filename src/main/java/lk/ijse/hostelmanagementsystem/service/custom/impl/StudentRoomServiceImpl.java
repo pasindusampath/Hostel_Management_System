@@ -8,13 +8,15 @@ import lk.ijse.hostelmanagementsystem.service.custom.StudentRoomService;
 import lk.ijse.hostelmanagementsystem.tm.ReservedOrAvailableRoomTM;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 
 import java.util.HashMap;
 import java.util.List;
 
 public class StudentRoomServiceImpl implements StudentRoomService {
-    StudentRoomRepo studentRoomRepo = new StudentRoomRepoImpl();
+    StudentRoomRepo studentRoomRepo = RepoFactory.getInstance().getRepo(RepoTypes.STUDENT_ROOM);;
     FactoryConfiguration factory = FactoryConfiguration.getInstance();
     Converter converter = Converter.getInstance();
     @Override

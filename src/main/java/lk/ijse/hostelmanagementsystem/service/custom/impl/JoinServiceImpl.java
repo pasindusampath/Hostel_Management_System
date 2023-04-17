@@ -10,6 +10,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.JoinService;
 import lk.ijse.hostelmanagementsystem.tm.RemainingKeyMoneyTM;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 
 import java.util.ArrayList;
@@ -17,8 +19,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public class JoinServiceImpl implements JoinService {
-    StudentRoomRepo studentRoomRepo = new StudentRoomRepoImpl();
-    RoomRepo roomRepo = new RoomRepoImpl();
+    StudentRoomRepo studentRoomRepo = RepoFactory.getInstance().getRepo(RepoTypes.STUDENT_ROOM);
+    RoomRepo roomRepo = RepoFactory.getInstance().getRepo(RepoTypes.ROOM);
     FactoryConfiguration factory = FactoryConfiguration.getInstance();
     Converter converter = Converter.getInstance();
 

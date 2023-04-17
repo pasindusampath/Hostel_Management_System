@@ -23,6 +23,5 @@ public class AppInitializer extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setScene(new Scene(load));
         primaryStage.show();
-        ;
     }
 }

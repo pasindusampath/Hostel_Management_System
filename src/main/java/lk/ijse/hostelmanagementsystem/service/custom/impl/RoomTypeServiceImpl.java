@@ -7,6 +7,8 @@ import lk.ijse.hostelmanagementsystem.repo.custom.impl.RoomTypeRepoImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.RoomTypeService;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -19,7 +21,7 @@ public class RoomTypeServiceImpl implements RoomTypeService {
     private final FactoryConfiguration factory;
 
     public RoomTypeServiceImpl(){
-        roomTypeRepo=new RoomTypeRepoImpl();
+        roomTypeRepo= RepoFactory.getInstance().getRepo(RepoTypes.ROOM_TYPE);;
         converter=Converter.getInstance();
         factory=FactoryConfiguration.getInstance();
     }

@@ -11,6 +11,8 @@ import lk.ijse.hostelmanagementsystem.tm.ReservedOrAvailableRoomTM;
 import lk.ijse.hostelmanagementsystem.tm.RoomTM;
 import lk.ijse.hostelmanagementsystem.util.Converter;
 import lk.ijse.hostelmanagementsystem.util.FactoryConfiguration;
+import lk.ijse.hostelmanagementsystem.util.factory.RepoFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.RepoTypes;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -23,7 +25,7 @@ public class RoomServiceImpl implements RoomService {
     FactoryConfiguration factory;
     public RoomServiceImpl(){
         converter=Converter.getInstance();
-        roomRepo=new RoomRepoImpl();
+        roomRepo= RepoFactory.getInstance().getRepo(RepoTypes.ROOM);
         factory=FactoryConfiguration.getInstance();
     }
     @Override
