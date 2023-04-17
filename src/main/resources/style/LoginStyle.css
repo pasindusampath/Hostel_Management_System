@@ -1,0 +1,20 @@
+#btnLogin:hover{
+    -fx-background-color: #a0f6e1;
+}
+#middlePane{
+    -fx-background-color: #095779;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 1, 0.0);
+}
+.text-field{
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.4);
+}
+.title-bar {
+    -fx-padding: 10px;
+    -fx-background-color: #000000;
+}
+
+.title-bar Label {
+    -fx-text-fill: white;
+}

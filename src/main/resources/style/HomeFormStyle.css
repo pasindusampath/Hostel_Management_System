@@ -1,0 +1,68 @@
+#pane1,#pane2,#pane3,#pane4{
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0.5, 1, 0.0);
+}
+#pane5{
+    -fx-background-color: #61c2b3;
+    -fx-border-color: black;
+    -fx-background-radius: 30px;
+    -fx-border-radius: 30px;
+    -fx-effect: dropshadow(gaussian, rgba(184, 229, 144, 0.7), 10, 0.5, 1, 0.0);
+}
+#pane1:hover,#pane2:hover,#pane3:hover,#pane4:hover{
+    -fx-effect: dropshadow(gaussian, rgba(184, 129, 252, 0.4), 10, 0.5, 1, 0.0);
+}
+.chart {
+
+
+}
+.chart-content {
+
+}
+
+.chart-title {
+    -fx-text-fill: #4682b4;
+    -fx-font-size: 1.6em;
+}
+
+.axis-label {
+    -fx-text-fill: #ec1848;
+}
+
+.chart-legend {
+    -fx-background-color:  transparent;
+
+}
+
+.chart-legend-item-symbol{
+    -fx-background-radius: 0;
+}
+
+.chart-legend-item{
+    -fx-text-fill: #ea3658;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(98, 82, 82, 0);
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #3d3f3f;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #000000;
+}
+.chart-alternative-row-fill {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+.default-color0.chart-series-line{-fx-stroke: #994bf1;}
+
+#mainPane{
+    -fx-background-color: rgb(84, 84, 84);
+    -fx-border-color: #fafafa transparent transparent transparent;
+    -fx-border-width: 5px 0px 0px 0px;
+}

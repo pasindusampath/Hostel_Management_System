@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane prefHeight="278.0" prefWidth="537.0" stylesheets="@../style/LoginFormStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.LoadingFormController">
+   <children>
+      <ImageView fitHeight="204.0" fitWidth="301.0" layoutX="167.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/logo.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="mainRectangle" arcHeight="5.0" arcWidth="5.0" fill="#eef0f2" height="20.0" layoutX="22.0" layoutY="233.0" stroke="#656061" strokeType="INSIDE" strokeWidth="2.0" width="494.0" />
+      <Rectangle fx:id="smallRectangle" arcHeight="5.0" arcWidth="5.0" fill="#79d3c6" height="20.0" layoutX="22.0" layoutY="233.0" stroke="#656061" strokeType="INSIDE" strokeWidth="2.0" width="13.0" />
+      <Label fx:id="lblDescription" alignment="CENTER" layoutX="21.0" layoutY="197.0" prefHeight="30.0" prefWidth="494.0" textFill="#4ec6c7" />
+      <Label fx:id="lblPercentage" alignment="CENTER" layoutX="22.0" layoutY="235.0" prefHeight="17.0" prefWidth="494.0" text="50%" textFill="#f50000" />
+   </children>
+</AnchorPane>

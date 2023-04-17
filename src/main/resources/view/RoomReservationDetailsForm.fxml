@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainPane" prefHeight="585.0" prefWidth="974.0" stylesheets="@../style/RoomReservationDetailsFormStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.RoomReservationDetailsFormController">
+   <children>
+      <ImageView fitHeight="585.0" fitWidth="974.0" pickOnBounds="true" visible="false">
+         <image>
+            <Image url="@../assets/background%20(2).jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="pane1" layoutX="539.0" layoutY="49.0" prefHeight="200.0" prefWidth="419.0" />
+      <AnchorPane fx:id="pane2" layoutX="539.0" layoutY="311.0" prefHeight="240.0" prefWidth="419.0" />
+      <Label alignment="CENTER" layoutX="11.0" layoutY="7.0" prefHeight="35.0" prefWidth="199.0" text="Room Reservation Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="158.0" layoutY="49.0" prefHeight="24.0" prefWidth="164.0" text="Reserved Rooms" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblReservedRoom" layoutX="35.0" layoutY="86.0" onMouseClicked="#tblReserveRoomOnClickAction" prefHeight="191.0" prefWidth="459.0">
+        <columns>
+          <TableColumn fx:id="colRoomId" prefWidth="109.0" text="Room Id" />
+          <TableColumn fx:id="colDescription" prefWidth="210.66665649414062" text="Description" />
+            <TableColumn fx:id="colType" prefWidth="137.33334350585938" text="Type" />
+        </columns>
+      </TableView>
+      <Separator layoutX="11.0" layoutY="291.0" opacity="0.78" prefHeight="0.0" prefWidth="508.0" />
+      <Label alignment="CENTER" layoutX="183.0" layoutY="307.0" prefHeight="24.0" prefWidth="164.0" text="Available  Rooms" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblAvailableRooms" layoutX="37.0" layoutY="337.0" prefHeight="222.0" prefWidth="457.0">
+         <columns>
+            <TableColumn fx:id="colRoomId2" prefWidth="121.0" text="Room Id" />
+            <TableColumn fx:id="colDescription2" prefWidth="181.0" text="Description" />
+            <TableColumn fx:id="colType2" prefWidth="150.0" text="Type" />
+         </columns>
+      </TableView>
+      <Separator layoutX="520.0" layoutY="294.0" opacity="0.58" orientation="VERTICAL" prefHeight="290.0" prefWidth="0.0" />
+      <Label alignment="CENTER" layoutX="672.0" layoutY="11.0" prefHeight="24.0" prefWidth="164.0" text="Student Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="83.0" text="Student Id">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="116.0" text="Student Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="187.0" text="Contact No">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="557.0" layoutY="149.0" text="Address">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtStudentId" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="79.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtStudentName" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="112.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtAddress" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="145.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXTextField fx:id="txtContactNo" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="183.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label alignment="CENTER" layoutX="669.0" layoutY="278.0" prefHeight="24.0" prefWidth="164.0" text="Reserved Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="580.0" layoutY="340.0" text="Start Date">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtStartDate" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="336.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label layoutX="581.0" layoutY="380.0" text="End Date">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtEndDate" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="376.0" prefHeight="25.0" prefWidth="234.0" />
+      <Label layoutX="581.0" layoutY="424.0" text="KeyMoney">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtKeyMoney" alignment="CENTER" editable="false" focusColor="#01040d" layoutX="703.0" layoutY="420.0" prefHeight="25.0" prefWidth="234.0" />
+      <JFXButton layoutX="852.0" layoutY="495.0" onAction="#btnLeaveOnAction" text="Leave" />
+      <Separator layoutX="11.0" layoutY="35.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashBoardMainContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="622.0" prefWidth="1215.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.DashBoardFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#021426" height="37.0" layoutX="2.0" stroke="BLACK" strokeType="INSIDE" width="1214.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#021426" height="622.0" stroke="BLACK" strokeType="INSIDE" width="242.0" />
+      <ImageView fitHeight="128.0" fitWidth="180.0" layoutX="49.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/logo.png" />
+         </image>
+      </ImageView>
+      <Separator layoutX="4.0" layoutY="142.0" opacity="0.38" prefHeight="2.0" prefWidth="233.0" />
+      <JFXButton fx:id="btnHome" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="4.0" layoutY="180.0" onAction="#btnHomeOnAction" onMouseEntered="#btnHomeOnMouseEnteredAction" onMouseExited="#btnHomeOnMouseExitAction" prefHeight="39.0" prefWidth="233.0" text="Home" textFill="#fdf8f8">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgHome" fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnManageStudents" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="5.0" layoutY="247.0" onAction="#btnManageStudentsOnAction" onMouseEntered="#btnManageStudentsOnMouseEntered" onMouseExited="#btnManageStudentsOnMouseExited" prefHeight="41.0" prefWidth="233.0" text="Manage Students" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgManageStudent" fitHeight="31.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/students.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnManageRooms" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="2.0" layoutY="304.0" onAction="#btnManageRoomsOnAction" onMouseEntered="#btnManageRoomsOnMouseEntered" onMouseExited="#btnManageRoomsOnMouseExited" prefHeight="46.0" prefWidth="238.0" text="Manage Rooms" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgManageRooms" fitHeight="36.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/hotel.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnReserveRooms" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutY="374.0" onAction="#btnReserveRoomsOnAction" onMouseEntered="#btnReserveRoomsOnMouseEntered" onMouseExited="#btnReserveRoomsOnMouseExited" prefHeight="41.0" prefWidth="242.0" text="Reserve Rooms" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgReserveRoom" fitHeight="31.0" fitWidth="42.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/img/booking.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnDetails" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutY="428.0" onAction="#btnDetailsOnAction" onMouseEntered="#btnReserveationDetailsOnMouseEntered" onMouseExited="#btnReserveationDetailsOnMouseExited" prefHeight="50.0" prefWidth="242.0" text="Reservation Details" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgRoomReservationDetails" fitHeight="43.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/biography.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnRemaining" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="4.0" layoutY="480.0" onAction="#btnRemainingOnAction" onMouseEntered="#btnRemainingKeyMoneyOnMouseEntered" onMouseExited="#btnRemainingKeyMoneyOnMouseExited" prefHeight="51.0" prefWidth="238.0" text="Remaining KeyMoney" textFill="#fffbfb">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fx:id="imgRemainingKeyMoney" fitHeight="41.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/money.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <AnchorPane fx:id="dashBoardContext" layoutX="242.0" layoutY="37.0" prefHeight="585.0" prefWidth="974.0" />
+      <Label fx:id="lblTime" layoutX="294.0" layoutY="14.0" prefHeight="17.0" prefWidth="113.0" text="Time" textFill="WHITE" />
+      <Label layoutX="518.0" layoutY="14.0" prefHeight="17.0" prefWidth="113.0" />
+      <JFXButton fx:id="btnLogout" layoutX="1087.0" layoutY="4.0" onAction="#btnLogoutOnAction" prefHeight="32.0" prefWidth="122.0" text="LogOut" textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../assets/log-out.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="1053.0" layoutY="4.0" onAction="#btnForgetPasswordOnAction" prefHeight="32.0" prefWidth="36.0">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/password.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

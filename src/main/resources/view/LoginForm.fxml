@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="LoginFormContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="764.0" stylesheets="@../style/LoginStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="441.0" fitWidth="764.0" pickOnBounds="true">
+         <image>
+            <Image url="@../assets/img/lockscreenbkg.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="middlePane" layoutX="251.0" layoutY="47.0" prefHeight="360.0" prefWidth="290.0">
+         <children>
+            <JFXTextField fx:id="txtUserName" alignment="CENTER" layoutX="29.0" layoutY="175.0" prefHeight="25.0" prefWidth="232.0" promptText="User Name" unFocusColor="WHITE" />
+            <JFXPasswordField fx:id="txtPassword" alignment="CENTER" layoutX="29.0" layoutY="214.0" onKeyReleased="#txtPasswordKeyReleaseOnAction" prefHeight="25.0" prefWidth="232.0" promptText="Password" unFocusColor="WHITE" />
+            <JFXButton fx:id="btnLogin" layoutX="111.0" layoutY="264.0" onAction="#btnLoginOnAction" opacity="0.81" prefHeight="23.0" prefWidth="69.0" style="-fx-background-color: lightblue;" text="Login" textFill="#1d0101">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font>
+            </JFXButton>
+            <Hyperlink alignment="CENTER" layoutX="49.0" layoutY="302.0" prefHeight="23.0" prefWidth="192.0" text="Forgot Password" />
+            <ImageView fitHeight="91.0" fitWidth="108.0" layoutX="98.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/Login.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtVisiblePassword" alignment="CENTER" layoutX="29.0" layoutY="214.0" onKeyReleased="#txtVisiblePasswordOnKeyReleaseAction" prefHeight="25.0" prefWidth="232.0" promptText="Password" unFocusColor="WHITE" visible="false" />
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="229.0" layoutY="209.0" onAction="#btnVisiblePasswordOnAction" prefHeight="25.0" prefWidth="22.0">
+               <graphic>
+                  <ImageView fx:id="eyeIcon" fitHeight="14.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/img/icons8-eye-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <Label fx:id="lblVisiblePassword" layoutX="178.0" layoutY="241.0" prefHeight="17.0" prefWidth="83.0" textFill="WHITE" />
+            <Label fx:id="lblWrong" alignment="CENTER" layoutX="14.0" layoutY="325.0" prefHeight="17.0" prefWidth="263.0" textFill="#fb0a0a" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
