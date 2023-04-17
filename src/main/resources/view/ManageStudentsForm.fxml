@@ -32,12 +32,12 @@
             <JFXTextField fx:id="txtContact" layoutX="29.0" layoutY="241.0" prefHeight="25.0" prefWidth="238.0" promptText="Contact No" />
             <JFXTextField fx:id="txtCity" layoutX="29.0" layoutY="286.0" prefHeight="25.0" prefWidth="238.0" promptText="City" />
             <JFXTextField fx:id="txtGmail" layoutX="29.0" layoutY="330.0" prefHeight="25.0" prefWidth="238.0" promptText="Gmail" />
-            <JFXButton fx:id="btnUpdate" layoutX="44.0" layoutY="393.0" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: Blue;" text="Update" textFill="#100101">
+            <JFXButton fx:id="btnUpdate" layoutX="44.0" layoutY="393.0" onAction="#btnUpdateOnAction" prefHeight="25.0" prefWidth="77.0" text="Update" textFill="#100101">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnDelete" layoutX="163.0" layoutY="393.0" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: Red;" text="Delete" textFill="#140101">
+            <JFXButton fx:id="btnDelete" layoutX="163.0" layoutY="393.0" onAction="#btnDeleteOnAction" prefHeight="25.0" prefWidth="77.0" text="Delete" textFill="#140101">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>

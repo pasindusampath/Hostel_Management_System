@@ -78,3 +78,23 @@
 .table-view > .virtual-flow > .scroll-bar > .decrement-button {
     -fx-opacity: 0;
 }
+#btnUpdate{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , white, #d2fc8b);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}
+#btnUpdate:hover{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #d7c5c5, #adec44);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}
+#btnDelete{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , white, #f37373);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}
+#btnDelete:hover{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #c5b9b9, #ee4141);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}

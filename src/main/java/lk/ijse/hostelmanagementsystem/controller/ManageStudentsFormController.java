@@ -15,10 +15,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.hostelmanagementsystem.dto.custom.StudentDTO;
-import lk.ijse.hostelmanagementsystem.entity.custom.Student;
 import lk.ijse.hostelmanagementsystem.service.custom.StudentService;
-import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentServiceImpl;
 import lk.ijse.hostelmanagementsystem.tm.StudentTM;
+import lk.ijse.hostelmanagementsystem.util.Regex;
+import lk.ijse.hostelmanagementsystem.util.TextFields;
 import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
 import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
@@ -31,20 +31,21 @@ public class ManageStudentsFormController {
     public JFXButton btnDelete;
     public AnchorPane addStudentPane;
     public TableView<StudentTM> tblStudents;
-    public TableColumn<StudentTM,String> colName;
-    public TableColumn<StudentTM,String> colAddress;
-    public TableColumn<StudentTM,String> colContact;
-    public TableColumn<StudentTM,String> colCity;
-    public TableColumn<StudentTM,String> colGmail;
+    public TableColumn<StudentTM, String> colName;
+    public TableColumn<StudentTM, String> colAddress;
+    public TableColumn<StudentTM, String> colContact;
+    public TableColumn<StudentTM, String> colCity;
+    public TableColumn<StudentTM, String> colGmail;
     public JFXTextField txtStudentId;
     public JFXTextField txtName;
     public JFXTextField txtAddress;
     public JFXTextField txtContact;
     public JFXTextField txtCity;
     public JFXTextField txtGmail;
-    AddStudentFormController controller ;
+    AddStudentFormController controller;
 
-    private final StudentService studentService = ServiceFactory.getInstance().getService(ServiceType.STUDENT);;
+    private final StudentService studentService = ServiceFactory.getInstance().getService(ServiceType.STUDENT);
+    ;
 
 
     public void initialize() throws IOException {
@@ -60,62 +61,68 @@ public class ManageStudentsFormController {
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         StudentTM studentTM = collectData();
         StudentDTO student = covertToDto(studentTM);
-            boolean save = studentService.update(student);
-            if(save){
-                new Alert(Alert.AlertType.INFORMATION,"Operation Success").show();
-                getDataToTable();
-                clear();
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Operation Failed").show();
-            }
+
+        if (!validate()) {
+            new Alert(Alert.AlertType.ERROR, "Fill Valid Data And try again").show();
+            return;
+        }
+
+        boolean save = studentService.update(student);
+        if (save) {
+            new Alert(Alert.AlertType.INFORMATION, "Operation Success").show();
+            getDataToTable();
+            clear();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Operation Failed").show();
+        }
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
         StudentTM studentTM = collectData();
         StudentDTO student = covertToDto(studentTM);
 
-            boolean save = studentService.delete(student);
-            if(save){
-                new Alert(Alert.AlertType.INFORMATION,"Operation Success").show();
-                getDataToTable();
-                Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Do You Want To Clear data in textFields"
-                        , ButtonType.YES, ButtonType.NO).showAndWait();
-                if(buttonType.isPresent()){
-                    if(buttonType.get().equals(ButtonType.YES)){
-                        clear();
-                    }
+        boolean save = studentService.delete(student);
+        if (save) {
+            new Alert(Alert.AlertType.INFORMATION, "Operation Success").showAndWait();
+            getDataToTable();
+            Optional<ButtonType> buttonType = new Alert(Alert.AlertType.CONFIRMATION, "Do You Want To Clear data in textFields"
+                    , ButtonType.YES, ButtonType.NO).showAndWait();
+            if (buttonType.isPresent()) {
+                if (buttonType.get().equals(ButtonType.YES)) {
+                    clear();
                 }
-            }else {
-                new Alert(Alert.AlertType.ERROR,"Operation Failed").show();
             }
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Operation Failed").show();
+        }
 
     }
 
-    private StudentDTO covertToDto(StudentTM student){
-        return new StudentDTO(student.getId(),student.getName(),student.getAddress(),student.getCity(),
-                student.getContact(),student.getGmail(),null);
+    private StudentDTO covertToDto(StudentTM student) {
+        return new StudentDTO(student.getId(), student.getName(), student.getAddress(), student.getCity(),
+                student.getContact(), student.getGmail(), null);
     }
 
-    private StudentTM convertToTM(StudentDTO student){
-        return new StudentTM(student.getId(),student.getName(),student.getAddress(),
-                student.getContact(),student.getCity(),student.getGmail());
+    private StudentTM convertToTM(StudentDTO student) {
+        return new StudentTM(student.getId(), student.getName(), student.getAddress(),
+                student.getContact(), student.getCity(), student.getGmail());
     }
 
-    private StudentTM collectData(){
-        return new StudentTM(txtStudentId.getText(),txtName.getText(),txtAddress.getText(),txtContact.getText(),
-                txtCity.getText(),txtGmail.getText());
+    private StudentTM collectData() {
+        return new StudentTM(txtStudentId.getText(), txtName.getText(), txtAddress.getText(), txtContact.getText(),
+                txtCity.getText(), txtGmail.getText());
     }
 
-    public void getDataToTable(){
+    public void getDataToTable() {
         List<StudentDTO> all = studentService.getAll();
         ObservableList<StudentTM> list = FXCollections.observableArrayList();
-        for (StudentDTO ob:all){
+        for (StudentDTO ob : all) {
             list.add(convertToTM(ob));
         }
         tblStudents.setItems(list);
     }
 
-    public void visualize(){
+    public void visualize() {
         colName.setCellValueFactory(new PropertyValueFactory<>("name"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colContact.setCellValueFactory(new PropertyValueFactory<>("contact"));
@@ -125,10 +132,10 @@ public class ManageStudentsFormController {
 
     public void tblStudentOnClickAction(MouseEvent mouseEvent) {
         StudentTM student = tblStudents.getSelectionModel().getSelectedItem();
-        if(student!=null)setTextFields(covertToDto(student));
+        if (student != null) setTextFields(covertToDto(student));
     }
 
-    public void setTextFields(StudentDTO student){
+    public void setTextFields(StudentDTO student) {
         txtStudentId.setText(student.getId());
         txtName.setText(student.getName());
         txtContact.setText(student.getContact());
@@ -137,7 +144,7 @@ public class ManageStudentsFormController {
         txtGmail.setText(student.getGmail());
     }
 
-    public void clear(){
+    public void clear() {
         txtStudentId.clear();
         txtName.clear();
         txtContact.clear();
@@ -150,5 +157,15 @@ public class ManageStudentsFormController {
     public void btnSendDataOnAction(ActionEvent actionEvent) {
         controller.setData(collectData());
         clear();
+    }
+
+    public boolean validate() {
+        boolean b = true;
+        if (!Regex.setTextColor(TextFields.EMAIL, txtGmail)) b = false;
+        if (!Regex.setTextColor(TextFields.PHONE, txtContact)) b = false;
+        if (!Regex.setTextColor(TextFields.ADDRESS, txtCity)) b = false;
+        if (!Regex.setTextColor(TextFields.ADDRESS, txtAddress)) b = false;
+        if (!Regex.setTextColor(TextFields.NAME, txtName)) b = false;
+        return b;
     }
 }

@@ -23,17 +23,17 @@
          <children>
             <JFXTextField fx:id="txtRoomId" layoutX="30.0" layoutY="37.0" prefHeight="25.0" prefWidth="188.0" promptText="Room Id" />
             <JFXComboBox fx:id="cbRoomType" layoutX="30.0" layoutY="126.0" prefHeight="25.0" prefWidth="188.0" promptText="Type" />
-            <JFXButton fx:id="btnAdd1" layoutX="260.0" layoutY="37.0" onAction="#btnAddRoomOnAction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: green;" text="Add " textFill="#120101">
+            <JFXButton fx:id="btnAdd1" layoutX="260.0" layoutY="37.0" onAction="#btnAddRoomOnAction" prefHeight="25.0" prefWidth="72.0" text="Add " textFill="#120101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnUpdate1" layoutX="260.0" layoutY="91.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: blue;" text="Update" textFill="#160101">
+            <JFXButton fx:id="btnUpdate1" layoutX="260.0" layoutY="91.0" prefHeight="25.0" prefWidth="72.0" text="Update" textFill="#160101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="btnDelete1" layoutX="260.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: red;" text="Delete" textFill="#100101">
+            <JFXButton fx:id="btnDelete1" layoutX="260.0" layoutY="139.0" prefHeight="25.0" prefWidth="72.0" text="Delete" textFill="#100101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -63,17 +63,17 @@
             <JFXTextField fx:id="txtRoomTypeId" layoutX="52.0" layoutY="94.0" onAction="#txtRoomTypeIdOnAction" prefHeight="25.0" prefWidth="304.0" promptText="Room Type Id" />
             <JFXTextField fx:id="txtRoomTypeDescription" layoutX="52.0" layoutY="154.0" prefHeight="25.0" prefWidth="304.0" promptText="Description" />
             <JFXTextField fx:id="txtKeyMoney" layoutX="53.0" layoutY="217.0" prefHeight="25.0" prefWidth="304.0" promptText="KeyMoney (LKR)" />
-            <JFXButton layoutX="61.0" layoutY="296.0" onAction="#btnAddRoomTypeOnAction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: green;" text="Add " textFill="#120101">
+            <JFXButton fx:id="btnAdd2" layoutX="61.0" layoutY="296.0" onAction="#btnAddRoomTypeOnAction" prefHeight="25.0" prefWidth="72.0" text="Add " textFill="#120101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="170.0" layoutY="296.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: blue;" text="Update" textFill="#160101">
+            <JFXButton fx:id="btnUpdate2" layoutX="170.0" layoutY="296.0" prefHeight="25.0" prefWidth="72.0" text="Update" textFill="#160101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXButton layoutX="275.0" layoutY="296.0" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: red;" text="Delete" textFill="#100101">
+            <JFXButton fx:id="btnDelete2" layoutX="275.0" layoutY="296.0" prefHeight="25.0" prefWidth="72.0" text="Delete" textFill="#100101">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

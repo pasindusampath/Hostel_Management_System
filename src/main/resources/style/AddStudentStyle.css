@@ -1,0 +1,10 @@
+#btnSaveStudents{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , white, #a6ffef);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}
+#btnSaveStudents:hover{
+    -fx-background-color: linear-gradient(from 82% 90% to 90% 90% , #d9cdcd, #2dcdf1);
+    -fx-border-color: black;
+    -fx-text-fill: BLACK;
+}

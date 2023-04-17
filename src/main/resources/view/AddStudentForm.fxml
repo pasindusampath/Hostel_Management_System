@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="261.0" prefWidth="614.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.AddStudentFormController">
+<AnchorPane prefHeight="261.0" prefWidth="614.0" stylesheets="@../style/AddStudentStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostelmanagementsystem.controller.AddStudentFormController">
    <children>
       <ImageView fitHeight="261.0" fitWidth="618.0" layoutX="-4.0" pickOnBounds="true" visible="false">
          <image>
@@ -29,7 +29,7 @@
       <JFXTextField fx:id="txtName" layoutX="213.0" layoutY="76.0" prefHeight="25.0" prefWidth="149.0" promptText="Name" />
       <JFXTextField fx:id="txtAddress" layoutX="417.0" layoutY="76.0" prefHeight="25.0" prefWidth="169.0" promptText="Address" />
       <JFXTextField fx:id="txtContactNo" layoutX="28.0" layoutY="173.0" prefHeight="25.0" prefWidth="149.0" promptText="Contact No" />
-      <JFXButton fx:id="btnSaveStudents" layoutX="434.0" layoutY="223.0" onAction="#btnSaveStudentsOnAction" prefHeight="30.0" prefWidth="79.0" style="-fx-background-color: #54B435;" text="Save">
+      <JFXButton fx:id="btnSaveStudents" layoutX="434.0" layoutY="223.0" onAction="#btnSaveStudentsOnAction" prefHeight="25.0" prefWidth="79.0" text="Save">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>

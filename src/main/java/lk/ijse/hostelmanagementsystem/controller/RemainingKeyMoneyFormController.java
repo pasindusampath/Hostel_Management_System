@@ -43,6 +43,11 @@ public class RemainingKeyMoneyFormController {
     public void initialize(){
         visualize();
         getData();
+        txtPayingAmount.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                txtPayingAmount.setText(newValue.replaceAll("\\D", "")); // force the text field to be numeric only
+            }
+        });
     }
     public void visualize(){
         colRoomId.setCellValueFactory(new PropertyValueFactory<>("room"));
