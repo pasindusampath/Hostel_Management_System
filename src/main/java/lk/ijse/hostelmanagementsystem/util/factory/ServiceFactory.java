@@ -13,6 +13,8 @@ public class ServiceFactory {
     private final TransactionalService transactionalService;
     private final UserService userService;
 
+    private static ServiceFactory serviceFactory;
+
     private ServiceFactory(){
         joinService=new JoinServiceImpl();
         roomService=new RoomServiceImpl();
@@ -21,6 +23,10 @@ public class ServiceFactory {
         studentService=new StudentServiceImpl();
         transactionalService=new TransactionalServiceImpl();
         userService=new UserServiceImpl();
+    }
+
+    public static ServiceFactory getInstance(){
+        return serviceFactory==null ? serviceFactory=new ServiceFactory():serviceFactory;
     }
 
     public <T>T getService(ServiceType type){

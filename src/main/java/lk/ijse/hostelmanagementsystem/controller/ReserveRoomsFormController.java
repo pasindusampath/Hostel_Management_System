@@ -22,6 +22,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.impl.RoomServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.RoomTypeServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.TransactionalServiceImpl;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -45,9 +47,9 @@ public class ReserveRoomsFormController {
     public TableColumn colPayingAmount;
     public TableColumn colDateFrom;
     public TableColumn colDateTo;
-    private final StudentService studentService = new StudentServiceImpl();
-    private final RoomTypeService roomTypeService = new RoomTypeServiceImpl();
-    private final RoomService roomService = new RoomServiceImpl();
+    private final StudentService studentService = ServiceFactory.getInstance().getService(ServiceType.STUDENT);;
+    private final RoomTypeService roomTypeService = ServiceFactory.getInstance().getService(ServiceType.ROOM_TYPE);;
+    private final RoomService roomService = ServiceFactory.getInstance().getService(ServiceType.ROOM);
 
 
     public void initialize(){

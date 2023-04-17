@@ -17,6 +17,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.RoomTypeService;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.RoomServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.RoomTypeServiceImpl;
 import lk.ijse.hostelmanagementsystem.tm.RoomTM;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.util.List;
 
@@ -36,8 +38,8 @@ public class ManageRoomFormController {
     private RoomService roomService;
 
     public void initialize(){
-        roomService=new RoomServiceImpl();
-        roomTypeService=new RoomTypeServiceImpl();
+        roomService= ServiceFactory.getInstance().getService(ServiceType.ROOM);;
+        roomTypeService=ServiceFactory.getInstance().getService(ServiceType.ROOM_TYPE);;
         setComboBox();
         visualizeComboBox();
         visualize();

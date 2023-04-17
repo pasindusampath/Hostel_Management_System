@@ -8,6 +8,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.JoinService;
 import lk.ijse.hostelmanagementsystem.service.custom.StudentRoomService;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.JoinServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentRoomServiceImpl;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -27,9 +29,10 @@ public class HomeFormController {
 
 
     private JoinService joinService;
-    private final StudentRoomService studentRoomService=new StudentRoomServiceImpl();
+    private StudentRoomService studentRoomService;
     public void initialize(){
-        joinService = new JoinServiceImpl();
+        joinService =ServiceFactory.getInstance().getService(ServiceType.JOIN);;
+        studentRoomService= ServiceFactory.getInstance().getService(ServiceType.STUDENT_ROOM);
         HashMap<String, Integer> list = joinService.getAvailableRoomCount();
         lbl1RoomCount.setText(String.valueOf(list.get("RT-001")));
         lbl2RoomCount.setText(String.valueOf(list.get("RT-002")));

@@ -11,6 +11,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentServiceImpl;
 import lk.ijse.hostelmanagementsystem.tm.StudentTM;
 import lk.ijse.hostelmanagementsystem.util.Regex;
 import lk.ijse.hostelmanagementsystem.util.TextFields;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.time.LocalDate;
 
@@ -27,7 +29,7 @@ public class AddStudentFormController {
     private StudentService studentService;
 
     public void initialize(){
-        studentService=new StudentServiceImpl();
+        studentService= ServiceFactory.getInstance().getService(ServiceType.STUDENT);
     }
 
     public void btnSaveStudentsOnAction(ActionEvent actionEvent) {

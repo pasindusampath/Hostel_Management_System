@@ -15,7 +15,9 @@ import javafx.stage.Stage;
 import lk.ijse.hostelmanagementsystem.dto.custom.UserDTO;
 import lk.ijse.hostelmanagementsystem.service.custom.UserService;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.UserServiceImpl;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
 import lk.ijse.hostelmanagementsystem.util.factory.ViewFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 import lk.ijse.hostelmanagementsystem.util.factory.types.ViewType;
 
 import java.io.IOException;
@@ -31,7 +33,7 @@ public class LoginFormController {
     public Label lblVisiblePassword;
     public JFXTextField txtVisiblePassword;
 
-    private UserService service = new UserServiceImpl();
+    private UserService service = ServiceFactory.getInstance().getService(ServiceType.USER);;
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnLogin) {

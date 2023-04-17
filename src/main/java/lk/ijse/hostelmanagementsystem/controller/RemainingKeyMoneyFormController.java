@@ -16,6 +16,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.StudentRoomService;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.JoinServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentRoomServiceImpl;
 import lk.ijse.hostelmanagementsystem.tm.RemainingKeyMoneyTM;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.util.List;
 
@@ -35,8 +37,8 @@ public class RemainingKeyMoneyFormController {
     public TableColumn<RemainingKeyMoneyTM,Double> colFullKeyMoney;
     public TableColumn<RemainingKeyMoneyTM,Double> colPaidAmount;
 
-    private final JoinService joinService = new JoinServiceImpl();
-    private final StudentRoomService studentRoomService = new StudentRoomServiceImpl();
+    private final JoinService joinService = ServiceFactory.getInstance().getService(ServiceType.JOIN);;
+    private final StudentRoomService studentRoomService = ServiceFactory.getInstance().getService(ServiceType.STUDENT_ROOM);
 
     public void initialize(){
         visualize();

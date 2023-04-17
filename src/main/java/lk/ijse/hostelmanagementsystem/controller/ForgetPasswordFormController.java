@@ -13,6 +13,8 @@ import javafx.scene.paint.Paint;
 import lk.ijse.hostelmanagementsystem.dto.custom.UserDTO;
 import lk.ijse.hostelmanagementsystem.service.custom.UserService;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.UserServiceImpl;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 public class ForgetPasswordFormController {
     public JFXPasswordField pwfOldPassword;
@@ -26,7 +28,7 @@ public class ForgetPasswordFormController {
     public ImageView confirmPasswordEyeImage;
     public JFXButton btnChangePassword;
 
-    private UserService service = new UserServiceImpl();
+    private UserService service = ServiceFactory.getInstance().getService(ServiceType.USER);
 
     public void initialize(){
         btnChangePassword.setDisable(true);

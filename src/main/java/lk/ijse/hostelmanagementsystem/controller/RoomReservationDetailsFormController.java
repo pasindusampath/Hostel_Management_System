@@ -20,6 +20,8 @@ import lk.ijse.hostelmanagementsystem.service.custom.impl.RoomServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.StudentRoomServiceImpl;
 import lk.ijse.hostelmanagementsystem.service.custom.impl.TransactionalServiceImpl;
 import lk.ijse.hostelmanagementsystem.tm.ReservedOrAvailableRoomTM;
+import lk.ijse.hostelmanagementsystem.util.factory.ServiceFactory;
+import lk.ijse.hostelmanagementsystem.util.factory.types.ServiceType;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -43,9 +45,9 @@ public class RoomReservationDetailsFormController {
     public TableColumn<ReservedOrAvailableRoomTM,String> colType2;
     public TableView<ReservedOrAvailableRoomTM>  tblAvailableRooms;
 
-    private StudentRoomService service = new StudentRoomServiceImpl();
-    private TransactionalService transactionalService = new TransactionalServiceImpl();
-    private RoomService roomService = new RoomServiceImpl();
+    private StudentRoomService service = ServiceFactory.getInstance().getService(ServiceType.STUDENT_ROOM);
+    private TransactionalService transactionalService = ServiceFactory.getInstance().getService(ServiceType.TRANSACTIONAL);
+    private RoomService roomService = ServiceFactory.getInstance().getService(ServiceType.ROOM);
 
     public void initialize(){
         visualize();
